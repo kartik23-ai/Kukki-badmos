@@ -95,7 +95,7 @@ body{
 <body>
 
 <!-- Background Music -->
-<audio autoplay loop>
+<audio id="bgm" loop>
   <source src="romantic.mp3" type="audio/mpeg">
 </audio>
 
@@ -157,6 +157,12 @@ setTimeout(()=>{s1.classList.remove("show");s2.classList.add("show");},6000);
 setTimeout(()=>{s2.classList.remove("show");s3.classList.add("show");},12000);
 setTimeout(()=>{s3.classList.remove("show");f.classList.add("show");},18000);
 </script>
+  <script>
+document.body.addEventListener("click", () => {
+  const music = document.getElementById("bgm");
+  music.play();
+}, { once: true });
+  </script>
 
 </body>
 </html>
