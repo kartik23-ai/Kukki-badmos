@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Kukki ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle,#1a1a1a,#000);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* SCENE */
+.scene{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+.scene.show{opacity:1;}
+
+/* ENVELOPE */
+.envelope{
+  width:280px;
+  height:180px;
+  background:#8b5a2b;
+  border-radius:6px;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.7);
+}
+.envelope::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;
+  border-left:140px solid transparent;
+  border-right:140px solid transparent;
+  border-top:90px solid #a56a3a;
+}
+
+/* PAPER (FIXED CENTER) */
+.paper{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:240px;
+  height:320px;
+  background:#f4e3c1;
+  border-radius:4px;
+  padding:18px;
+  text-align:center;
+  box-shadow:inset 0 0 20px rgba(0,0,0,.15);
+}
+
+/* TEXT */
+.title{
+  font-family:'Caveat',cursive;
+  font-size:2.2rem;
+  margin-bottom:12px;
+}
+.text{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+/* FINAL MESSAGE */
+.final{
+  position:absolute;
+  font-family:'Caveat',cursive;
+  font-size:3rem;
+  color:white;
+  opacity:0;
+  transform:scale(.7);
+  transition:all 2s ease;
+}
+.final.show{
+  opacity:1;
+  transform:scale(1.2);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LETTER 1 -->
+<div class="scene show" id="s1">
+  <div class="envelope">
+    <div class="paper">
+      <div class="title">Dear Kukki 🤍</div>
+      <div class="text">
+        Tum sirf meri kahani ka hissa nahi ho,<br>
+        tum meri poori kahani ho.<br><br>
+        Tumhari muskurahat hi mera sukoon hai.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LETTER 2 -->
+<div class="scene" id="s2">
+  <div class="envelope">
+    <div class="paper">
+      <div class="title">My Love ✨</div>
+      <div class="text">
+        Agar zindagi ek safar hai,<br>
+        toh main har mod par tumhara haath chahta hoon.<br><br>
+        Jahan tum ho,<br>
+        wahi mera ghar hai.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LETTER 3 -->
+<div class="scene" id="s3">
+  <div class="envelope">
+    <div class="paper">
+      <div class="title">Forever Yours ❤️</div>
+      <div class="text">
+        Tum ho toh sab kuch hai.<br>
+        Tum ho toh main hoon.<br><br>
+        Hamesha.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="final" id="final">
+  I love you Kukki ❤️
+</div>
+
+<script>
+const s1=document.getElementById("s1");
+const s2=document.getElementById("s2");
+const s3=document.getElementById("s3");
+const f=document.getElementById("final");
+
+setTimeout(()=>{s1.classList.remove("show");s2.classList.add("show");},6000);
+setTimeout(()=>{s2.classList.remove("show");s3.classList.add("show");},12000);
+setTimeout(()=>{s3.classList.remove("show");f.classList.add("show");},18000);
+</script>
+
+</body>
+</html>
